@@ -41,6 +41,6 @@ document.addEventListener("keydown", function(ev){
 
 function main() {
     boardView.play();
-    window.requestAnimationFrame(main);
+    window.requestAnimationFrame(main); // Candidato #2
 }
 

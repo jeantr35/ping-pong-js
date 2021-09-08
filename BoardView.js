@@ -1,4 +1,4 @@
-import draw from "./HelperMethods.js";
+import { draw, hit } from "./HelperMethods.js";
 export default class BoardView{
 
     constructor(canvas, board){
@@ -37,6 +37,7 @@ export default class BoardView{
             this.clean();
             this.draw();
             this.board.ball.move();
+            this.checkCollisions(); //Candidato #1
         }
     }
 
