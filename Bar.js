@@ -8,10 +8,19 @@ export default class Bar{
         this.board = board;
         this.board.bars.push(this);
         this.kind = "rectangle";
+        this.speed = 10;
     }
 
     down(){
-        
+        this.yPosition -= this.speed;
+    }
+
+    up(){
+        this.yPosition += this.speed;
+    }
+
+    toString(){
+        return "x: " + this.xPosition + " y: " + this.yPosition;
     }
 
 }
