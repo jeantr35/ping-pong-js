@@ -9,6 +9,12 @@ export default class Ball{
         this.radius = radius;
         board.ball = this;
         this.kind = "circle";
+        this.direction = 1;
+    }
+
+    move(){
+        this.xPosition += this.speedX * this.direction;
+        this.yPosition += this.speedY * this.direction;
     }
 
 }

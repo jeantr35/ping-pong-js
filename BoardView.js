@@ -7,6 +7,7 @@ export default class BoardView{
         this.canvas.width = board.width;
         this.canvas.height = board.height;
         this.context = canvas.getContext("2d");
+        this.playing = false;
     }
 
     draw(){
@@ -23,8 +24,11 @@ export default class BoardView{
     }
 
     play(){
-        this.clean();
-        this.draw();
+        if(this.playing){
+            this.clean();
+            this.draw();
+            this.board.ball.move();
+        }
     }
 
 }

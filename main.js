@@ -13,22 +13,30 @@ var boardView = new BoardView(canvas, board);
 
 window.addEventListener("load", main);
 window.requestAnimationFrame(main);
+boardView.draw();
 
 document.addEventListener("keydown", function(ev){
-    ev.preventDefault();
+    
     if (ev.key === "ArrowDown") {
+        ev.preventDefault();
         bar.down();
     }
     else if (ev.key === "ArrowUp") {
+        ev.preventDefault();
         bar.up();
     }
     else if (ev.key === "s") {
+        ev.preventDefault();
         bar2.down()
     }
     else if (ev.key === "w") {
+        ev.preventDefault();
         bar2.up();
     }
-    console.log(""+bar);
+    else if (ev.key === " ") {
+        ev.preventDefault();
+        boardView.playing = !boardView.playing;
+    }
 })
 
 function main() {
