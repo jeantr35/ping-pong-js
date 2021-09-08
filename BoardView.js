@@ -23,6 +23,15 @@ export default class BoardView{
         this.context.clearRect(0, 0, this.board.width, this.board.height);
     }
 
+    checkCollisions(){
+        for (var i = this.board.bars.length - 1; i >= 0; i--) {
+            var bar = this.board.bars[i];
+            if (hit(bar, this.board.ball)) {
+                this.board.ball.collision(bar);
+            }
+        }
+    }
+
     play(){
         if(this.playing){
             this.clean();

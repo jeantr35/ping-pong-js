@@ -12,6 +12,10 @@ export default class Ball{
         this.direction = 1;
     }
 
+    collision(bar){
+        
+    }
+
     move(){
         this.xPosition += this.speedX * this.direction;
         this.yPosition += this.speedY * this.direction;

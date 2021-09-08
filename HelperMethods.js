@@ -12,4 +12,31 @@ export default function draw(ctx, element){
             break;
         }
         
-    }    
+    }
+
+export function hit(a, b) {
+    //Revisa si a colisiona con b
+    var hit = false;
+    //Colisiones hirizontales
+    if(b.xPosition + b.width >= a.xPosition && b.xPosition < a.xPosition + a.width){
+
+    //Colisiona verticales
+    if (b.yPosition + b.height >= a.yPosition && b.yPosition < a.yPosition + a.height) 
+        hit = true;
+    }
+
+    //Colisión de a con b
+    if(b.xPosition <= a.xPosition && b.xPosition + b.width >= a.xPosition + a.width){
+    
+    if (b.yPosition <= a.yPosition && b.yPosition + b.height >= a.yPosition + a.height) 
+        hit = true;
+    }
+
+    //Colision b con a
+    if(a.xPosition <= b.xPosition && a.xPosition + a.width >= b.xPosition + b.width){
+    //Colisiona verticales
+    if (a.yPosition <= b.yPosition && a.yPosition + a.height >= b.yPosition + b.height) 
+        hit = true;
+    }
+    return hit;
+}
