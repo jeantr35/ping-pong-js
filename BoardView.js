@@ -18,4 +18,13 @@ export default class BoardView{
         }
     }
 
+    clean(){
+        this.context.clearRect(0, 0, this.board.width, this.board.height);
+    }
+
+    play(){
+        this.clean();
+        this.draw();
+    }
+
 }
