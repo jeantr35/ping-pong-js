@@ -3,13 +3,16 @@ function draw(ctx, element){
     switch (element.kind) {
         case "rectangle":
             ctx.fillRect(element.xPosition, element.yPosition, element.width, element.height);
+            ctx.fillStyle = "blue";
             break;
 
         case "circle":
             ctx.beginPath();
+            ctx.fillStyle = "purple"
             ctx.arc(element.xPosition, element.yPosition, element.radius, 0, 7);
             ctx.fill();
             ctx.closePath();
+            ctx.fillStyle = "red"
             break;
         }
         

@@ -12,11 +12,18 @@ export default class Bar{
     }
 
     down(){
-        this.yPosition -= this.speed;
+        if (this.yPosition > 0) {
+            this.yPosition -= this.speed;    
+        }
+        else{this.yPosition = 0;}
+        
     }
 
     up(){
-        this.yPosition += this.speed;
+        if (this.yPosition < this.board.height - this.height) {
+            this.yPosition += this.speed;    
+        }
+        else{this.yPosition = this.board.height - this.height;}
     }
 
     toString(){

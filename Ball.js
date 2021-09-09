@@ -12,7 +12,7 @@ export default class Ball{
         this.direction = 1;
         this.bounce_angle = 0;
         this.max_bounce_angle = Math.PI / 12;
-        this.speed = 2;
+        this.speed = 3;
     }
 
     collision(bar){
@@ -53,6 +53,10 @@ export default class Ball{
     setDefaulValues(x, y){
         this.xPosition = x;
         this.yPosition = y;
+        this.direction = 1;
+        this.bounce_angle = 0;
+        this.speedY = 0;
+        this.speedX = 3;
     }
 
     move(){
