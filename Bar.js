@@ -23,4 +23,9 @@ export default class Bar{
         return "x: " + this.xPosition + " y: " + this.yPosition;
     }
 
+    setDefaulValues(x, y){
+        this.xPosition = x;
+        this.yPosition = y;
+    }
+
 }

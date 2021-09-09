@@ -8,6 +8,7 @@ export default class BoardView{
         this.canvas.height = board.height;
         this.context = canvas.getContext("2d");
         this.playing = false;
+        this.gameover = false;
     }
 
     draw(){
@@ -34,10 +35,13 @@ export default class BoardView{
     }
 
     play(){
-        if(this.playing){
+        if(this.playing && !this.gameover){
             this.clean();
             this.draw();
             this.checkCollisions();
+            if (this.board.ball.goalCollision()) {
+                this.gameover = true;
+            }
             this.board.ball.move();
         }
     }

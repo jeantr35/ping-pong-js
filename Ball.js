@@ -36,7 +36,11 @@ export default class Ball{
         this.speedY = -this.speedY;
     }}
 
-    
+    goalCollision(){
+        if (this.xPosition + this.speedX > this.board.width - this.radius || this.xPosition + this.speedX < this.radius) {
+            return true;
+        }
+    }
 
     get width(){
         return this.radius * 2;
@@ -44,6 +48,11 @@ export default class Ball{
 
     get height(){
         return this.radius * 2;
+    }
+
+    setDefaulValues(x, y){
+        this.xPosition = x;
+        this.yPosition = y;
     }
 
     move(){
