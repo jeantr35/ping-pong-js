@@ -19,17 +19,17 @@ document.addEventListener("keydown", function(ev){
     
     if (ev.key === "ArrowDown") {
         ev.preventDefault();
-        bar.down();
+        bar.up();
     }
     else if (ev.key === "ArrowUp") {
         ev.preventDefault();
-        bar.up();
+        bar.down();
     }
-    else if (ev.key === "s") {
+    else if (ev.key === "w") {
         ev.preventDefault();
         bar2.down()
     }
-    else if (ev.key === "w") {
+    else if (ev.key === "s") {
         ev.preventDefault();
         bar2.up();
     }
@@ -41,6 +41,6 @@ document.addEventListener("keydown", function(ev){
 
 function main() {
     boardView.play();
-    window.requestAnimationFrame(main); // Candidato #2
+    window.requestAnimationFrame(main);
 }
 

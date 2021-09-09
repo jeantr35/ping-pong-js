@@ -30,14 +30,15 @@ export default class BoardView{
                 this.board.ball.collision(bar);
             }
         }
+        this.board.ball.borderCollision();
     }
 
     play(){
         if(this.playing){
             this.clean();
             this.draw();
+            this.checkCollisions();
             this.board.ball.move();
-            this.checkCollisions(); //Candidato #1
         }
     }
 

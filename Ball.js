@@ -12,7 +12,7 @@ export default class Ball{
         this.direction = 1;
         this.bounce_angle = 0;
         this.max_bounce_angle = Math.PI / 12;
-        this.speed = 3;
+        this.speed = 2;
     }
 
     collision(bar){
@@ -30,6 +30,13 @@ export default class Ball{
     else this.direction = 1;
 
     }
+
+    borderCollision(){
+    if(this.yPosition + this.speedY > this.board.height - this.radius || this.yPosition + this.speedY < this.radius){
+        this.speedY = -this.speedY;
+    }}
+
+    
 
     get width(){
         return this.radius * 2;
